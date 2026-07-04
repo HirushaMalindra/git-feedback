@@ -12,4 +12,14 @@ on:
         - name: Print
           run: echo "Hello World"
 
-        
+        - name: Print (debug)
+          run: echo "::debug::This is a debug message"
+
+        - name: Print repo details
+          run: |
+            echo "Owner: ${{ github.repository_owner }}"
+            echo "Repo: ${{ github.event.repository.name }}"
+            echo "Event: ${{ github.event_name }}"
+            echo "Branch: ${{ github.ref }}"
+            echo "Actor: ${{ github.actor }}"
+            echo "SHA: ${{ github.sha }}"
